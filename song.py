@@ -3,26 +3,24 @@ from time import sleep
 import time
 import tkinter as tk
 
-# Fungsi untuk menampilkan lirik dengan GUI
+
 def display_lyrics_gui():
-    # Membuat window
+  
     window = tk.Tk()
     window.title("Lirik Lagu")
 
-    # Mengatur ukuran window (500x300) dan memusatkan posisi window di layar
+   
     window.geometry("500x300")
     window.resizable(False, False)
 
-    # Membuat label untuk menampilkan lirik, dengan teks di tengah
     label = tk.Label(window, text="", font=("Helvetica", 14), anchor="center", justify="center", wraplength=400)
     label.pack(expand=True)
 
-    # Fungsi untuk menampilkan lirik setelah tombol Mulai ditekan
+  
     def start_lyrics():
-        # Nonaktifkan tombol setelah ditekan
+    
         start_button.config(state="disabled")
 
-        # Lirik dan delay antar karakter serta antar baris
         lines = [
             ("It's been 3 years and six whole months", 0.08),
             ("Since i saw your face that night", 0.10),
@@ -80,7 +78,6 @@ def display_lyrics_gui():
                 return
             text, char_delay = lines[idx]
 
-            # Menampilkan teks karakter demi karakter
             current_text = ""
             for char in text:
                 current_text += char
@@ -98,5 +95,6 @@ def display_lyrics_gui():
     start_button.pack(pady=10)
 
     window.mainloop()
+
 
 display_lyrics_gui()
